@@ -1,0 +1,52 @@
+Learning Objectives
+>>>Install, Start and Enable - Apache Web Server
+
+Install - Apache Web Server
+sudo yum install httpd
+
+Start - Apache Web Server
+sudo systemctl start httpd
+
+Check status of Apache Web Server
+sudo systemctl status httpd
+
+Enable Apache to start at boot
+sudo systemctl enable httpd
+
+>>>Install Start and Enable - Firewalld
+
+Install Firewalld
+sudo yum install firewalld
+
+Start Firewalld
+sudo systemctl start firewalld
+
+Check the status of Firewalld
+sudo systemctl status firewalld
+
+Enable Firewalld
+sudo  systemctl enable firewalld
+
+
+>>>Implement permanent firewall rules to allow traffic on ports 80 and 22
+
+Open port 80
+sudo firewall-cmd --add-port=80/tcp --permanent
+
+Open port 22
+sudo firewall-cmd --add-port=22/tcp --permanent
+
+sudo firewall-cmd --reload
+systemctl status firewalld
+sudo systemctl enable httpd
+sudo systemctl enable firewalld
+
+
+Relog via SSH to confirm that your firewall configuration is correct and access the web server default page with via your browser and server instance IP address
+Log out and log back in via SSH
+exit
+
+ssh cloud_user@Server_IP
+
+Open your web and visit the following URL <public-ip>
+http://Server_IP
